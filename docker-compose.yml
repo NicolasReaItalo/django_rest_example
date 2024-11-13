@@ -1,0 +1,33 @@
+services:
+  todo:
+    image: todo
+    build:
+      context: ./todo
+      dockerfile: Dockerfile
+    container_name: todo
+    networks:
+      - todo_network
+    expose:
+      - "8000"
+    restart: unless-stopped
+    init: true
+
+  nginx:
+    image: nginx
+    depends_on:
+          - todo
+    container_name: nginx
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    networks:
+      - todo_network
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    init: true
+
+networks:
+  todo_network:
+    name: todo_network
+    driver: bridge

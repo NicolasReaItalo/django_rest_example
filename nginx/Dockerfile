@@ -19,5 +19,5 @@ RUN	mkdir -p /var/run/nginx &&\
 
 COPY js_app/* /var/www/html
 
-EXPOSE 443
+EXPOSE 5000
 ENTRYPOINT ["nginx", "-g", "daemon off;"]

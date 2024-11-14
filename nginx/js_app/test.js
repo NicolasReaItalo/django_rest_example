@@ -13,7 +13,7 @@ const button = document.querySelector("button");
 button.onclick = () => {
   ul.innerHTML = "";
   const requete = new XMLHttpRequest();
-  requete.open("GET", "http://127.0.0.1:8000/api/todos/");
+  requete.open("GET", "http://localhost:5355/api/todos/");
   requete.responseType = "json";
   requete.send();
   requete.onload = () => {

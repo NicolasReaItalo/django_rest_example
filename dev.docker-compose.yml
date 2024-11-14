@@ -25,6 +25,8 @@ services:
     ports:
       - "5000:5000"
       - "5355:5355"
+    volumes:
+      - ./nginx/js_app:/var/www/html
     restart: unless-stopped
     init: true
 
@@ -32,3 +34,4 @@ networks:
   todo_network:
     name: todo_network
     driver: bridge
+

@@ -9,7 +9,7 @@ Green='\033[1;32m'       # Green
 #########################################################
 ### REGLES
 #########################################################
-.PHONY:		all init up down prune wipe-volumes re
+.PHONY:		all init up down prune dev re
 
 
 all: init up
@@ -17,10 +17,17 @@ all: init up
 #regle re : wipe les volumes et reconstruit tout
 re: prune init up
 
+dev: init-dev up
+
 
 init:
 	@echo "🔧 Building the images..."
 	@docker compose  -f docker-compose.yml build
+
+init-dev:
+	@echo "🔧 DEV Building the images..."
+	@docker compose  -f dev.docker-compose.yml build
+
 
 
 #cree et demarre les container

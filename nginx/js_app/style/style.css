@@ -78,7 +78,7 @@ li p {
 }
 
 
-li .todo {
+li [data-completed="false"] {
 	/* background: #333; */
 	flex: 0 0 20px;
 	height: 20px;
@@ -87,7 +87,12 @@ li .todo {
 	border: 2px solid #333;
 }
 
-li .todo.done {
+li [data-completed="true"]  {
 
 	background: #333;
+	flex: 0 0 20px;
+	height: 20px;
+	border-radius: 30px;
+	margin-right: 15px;
+	border: 2px solid #333;
 }

@@ -4,9 +4,8 @@ import {Todo} from "./Todo.js";
 
 
 
-const td = new Todo();
-let taskslist = td.getTasks();
-td.displayTasks(taskslist);
+const todo = new Todo();
+todo.refresh();
 
 
 // const ul = document.createElement("ul");
